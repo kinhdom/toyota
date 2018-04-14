@@ -1,0 +1,17 @@
+<div class="container">
+    <% if (layout == 'dongxe') { %>
+        <%- include('layout/dongxe',{arrXe:arrXe}) %>
+    <% } %>
+
+    <% if (layout == 'chitiet') { %>
+        <%- include('layout/chitiet',{chitiet:chitiet}) %>
+    <% } %>
+
+    <% if (layout == 'trangchu') { %>
+        <%- include('layout/trangchu') %>
+    <% } %>
+
+    <% if (layout == 'addxe') { %>
+        <%- include('layout/addxe') %>
+    <% } %>
+</div>

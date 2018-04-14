@@ -1,0 +1,86 @@
+<form action="/addxe" method="POST">
+    <div class="form-group">
+        <label>Name</label>
+        <input name="name" type="text" class="form-control" placeholder="Enter name">
+    </div>
+    <div class="form-group">
+        <label>Price</label>
+        <input name="price" type="text" class="form-control" placeholder="Enter price">
+    </div>
+    <div class="form-group">
+        <label>Thumbnail</label>
+        <input name="thumbnail" type="text" class="form-control" placeholder="Enter thumbnail">
+    </div>
+    <div class="form-group">
+        <select class="custom-select custom-select-lg mb-3" name="category">
+            <option selected>Chọn dòng xe</option>
+            <option value="Toyota Vios">Toyota Vios</option>
+            <option value="Toyota Camry">Toyota Camry</option>
+            <option value="Toyota Yaris">Toyota Yaris</option>
+            <option value="Toyota Corolla Altis">Toyota Corolla Altis</option>
+            <option value="Toyota Innova">Toyota Innova</option>
+            <option value="Toyota Fortuner">Toyota Fortuner</option>
+            <option value="Toyota Land Cruiser Prado">Toyota Land Cruiser Prado</option>
+            <option value="Toyota Land Cruiser">Toyota Land Cruiser</option>
+            <option value="Toyota Hilux">Toyota Hilux</option>
+            <option value="Toyota Hiace">Toyota Hiace</option>
+            <option value="Toyota Alphard">Toyota Alphard</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <select class="custom-select custom-select-lg mb-3" name="nhienLieu">
+            <option selected>Nhiên liệu</option>
+            <option value="Xăng">Xăng</option>
+            <option value="Dầu">Dầu</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <select class="custom-select custom-select-lg mb-3" name="kieuDang">
+            <option selected>Kiểu dáng</option>
+            <option value="Sedan">Sedan</option>
+            <option value="Hatchback">Hatchback</option>
+            <option value="SUV">SUV</option>
+            <option value="Đa dụng">Đa dụng</option>
+            <option value="Bán tải">Bán tải</option>
+            <option value="Thương mại">Thương mại</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <select class="custom-select custom-select-lg mb-3" name="xuatXu">
+            <option selected>Xuất xứ</option>
+            <option value="Xe trong nước">Xe trong nước</option>
+            <option value="Xe nhập khẩu">Xe nhập khẩu</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <textarea name="images" id="" cols="50" rows="3" placeholder="Mỗi ảnh 1 dòng"></textarea>
+    </div>
+    <ol>
+        <li hidden>
+            <input type="color" name="colorValue" id="">
+            <input type="text" name="colorName">
+        </li>
+        <li>
+            <input type="color" name="colorValue" id="" required>
+            <input type="text" name="colorName" required>
+        </li>
+    </ol>
+    <span id="addMoreColor">Add More Color</span>
+    <input type="reset" class="btn btn-outline-primary" value="Reset the form">
+    <button type="submit" class="btn btn-outline-primary">Submit</button>
+    <div id="summernote">Hello Summernote</div>
+</form>
+<script>
+    $(document).ready(function () {
+        $('#summernote').summernote({
+            height: 300,                 // set editor height
+            minHeight: 300,             // set minimum height of editor
+            maxHeight: 300,
+        });
+        var markupStr = $('#summernote').summernote('code');
+
+        $('#addMoreColor').click(function () {
+            $('ol').append(" <li> <input type=\"color\" name=\"colorValue\" > <input type=\"text\" name=\"colorName\" required></li>");
+        })
+    })
+</script>

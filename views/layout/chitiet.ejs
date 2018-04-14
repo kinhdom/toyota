@@ -1,0 +1,42 @@
+<ul class="collapsible">
+    <% chitiet.thong_so_ky_thuat.forEach(function(e){ %>
+        <li>
+            <div class="collapsible-header">
+                <i class="material-icons">add</i>
+                <%- e.name %>
+            </div>
+            <div class="collapsible-body">
+                <span>
+                    <%- e.content %>
+                </span>
+            </div>
+        </li>
+        <% }) %>
+</ul>
+<img id="xe" src="" alt="">
+<%- chitiet.list_color %>
+
+    <script>
+        $(document).ready(function () {
+            $('.collapsible').collapsible();
+
+            $('.list-color ul li').click(function(e){
+                console.log(e.target.attributes[0].value)
+                $('.list-color ul li span').addClass('border')
+                $('.txt-color').text(e.target.attributes[1].value)
+                $('#xe').attr('src','http://www.toyota.com.vn/'+e.target.attributes[0].value)
+            })
+        });
+    </script>
+    <style>
+        .list-color ul li span {
+            height: 35px;
+            width: 35px;
+            display: block;
+            position: relative;
+            
+        }
+        .border{
+            border: 1px solid pink;
+        }
+    </style>
